@@ -3,11 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>ライブコーディング</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" src="style.css"/>
   </head>
-  <body>
+  <body x-data="index()">
     <div>
-      <p>hello, world!</p>
+      <p x-text="message"></p>
     </div>
   </body>
+  <script>
+    function index() {
+      return {
+        message: 'hello, world'
+      }
+    }
+  </script>
 </html>
