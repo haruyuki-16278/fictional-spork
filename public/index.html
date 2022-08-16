@@ -6,16 +6,24 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" src="style.css"/>
   </head>
-  <body x-data="index()">
-    <div>
-      <p x-text="message"></p>
+  <body>
+    <div x-data="indexCtrl">
+      <div x-show="flag">
+        <p x-text="message"></p>
+      </div>
+      <button x-on:click="toggle()">toggle message</button>
     </div>
   </body>
   <script>
-    function index() {
+    function indexCtrl() {
       return {
-        message: 'hello, world'
-      }
-    }
+        message: 'hello, world',
+        flag: true,
+        toggle() {
+          this.flag = !this.flag;
+          console.log('fire', this.flag);
+        },
+      };
+    };
   </script>
 </html>
