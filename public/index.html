@@ -8,20 +8,19 @@
   </head>
   <body>
     <div x-data="indexCtrl">
-      <div x-show="flag">
-        <p x-text="message"></p>
+      <div>
+        <p x-text="cnt"></p>
       </div>
-      <button x-on:click="toggle()">toggle message</button>
+      <button x-on:click="counter()">increment</button>
     </div>
   </body>
   <script>
     function indexCtrl() {
       return {
         message: 'hello, world',
-        flag: true,
-        toggle() {
-          this.flag = !this.flag;
-          console.log('fire', this.flag);
+        cnt: 0,
+        counter() {
+          this.cnt++
         },
       };
     };
